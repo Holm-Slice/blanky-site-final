@@ -1,0 +1,26 @@
+{
+  "slides": [
+    {
+      "src": "src/assets/carousel-imgs/Desert Pose Trans 2.PNG",
+      "alt": "img 1 for carousel"
+    },
+    {
+      "src": "src/assets/carousel-imgs/Desert Graveyard Trans 2.PNG",
+      "alt": "img 2 for carousel"
+    },
+
+    {
+      "src": "src/assets/carousel-imgs/Sandwich Trans 2.PNG",
+      "alt": "img 3 for carousel"
+    },
+
+    {
+      "src": "src/assets/carousel-imgs/Ferris Wheel Trans 2.PNG",
+      "alt": "img 4 for carousel"
+    },
+    {
+      "src": "src/assets/carousel-imgs/Porch Trans.PNG",
+      "alt": "img 5 for carousel"
+    }
+  ]
+}
