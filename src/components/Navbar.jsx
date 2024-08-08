@@ -9,7 +9,7 @@ export default function Navbar() {
         <div id="header-img">
           <img
             src={
-              "./src/assets/true-assets/Website-Files/Blanky-Pastel-Trans.PNG"
+              "/public/assets/true-assets/Website-Files/Blanky-Pastel-Trans.PNG"
             }
             alt="Blanky-logo"
             className="header-logo"

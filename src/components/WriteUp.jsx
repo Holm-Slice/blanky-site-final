@@ -2,7 +2,7 @@ function WriteUp() {
   return (
     <div id="write-up-div">
       <img
-        src="src/assets/true-assets/Website-Files/Blanky About-03.png"
+        src="public/assets/true-assets/Website-Files/Blanky About-03.png"
         alt="band write up"
       />
     </div>

@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: "custom1";
-  src: url("src/assets/fonts/Boxing-Regular.otf");
+  src: url("public/assets/fonts/Boxing-Regular.otf");
 }
 
 @font-face {
   font-family: custom2;
-  src: url("src/assets/fonts/Tanker-Regular.otf");
+  src: url("public/assets/fonts/Tanker-Regular.otf");
 }
 
 * {
@@ -87,7 +87,7 @@ a.nav-link {
   /* font-family: myFont; */
   font-size: 35px;
 
-  transition: color 0.9s ease-in-out, box-shadow 0.9s ease-in-out;
+  transition: color 0.9s ease-in-out, box-shadow 1.5s ease-in-out;
 }
 
 .active {
@@ -153,7 +153,7 @@ a.nav-link {
   color: #000;
   /* text-align: right; */
   text-align: center;
-  padding: 20px 20px 10px 20px;
+  padding: 40px 20px 10px 20px;
   opacity: 1;
   position: relative;
   width: 100%;
@@ -167,7 +167,7 @@ a.nav-link {
 
 #footer h2 {
   color: #000;
-  /* font-size: 45px; */
+  font-size: 35px;
   transition: all 1.7s;
   padding-top: 10px;
   /* text-decoration: underline; */
@@ -258,7 +258,7 @@ a.nav-link {
   width: 70%;
   margin: 0 auto;
   height: auto;
-  /* padding-top: 30px; */
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 

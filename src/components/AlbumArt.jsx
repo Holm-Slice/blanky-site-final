@@ -10,7 +10,7 @@ function AlbumArt() {
   return (
     <div id="latest-album-art">
       <img
-        src="src/assets/true-assets/Website-Files/Idols On The Wall COVER.png"
+        src="public/assets/true-assets/Website-Files/Idols On The Wall COVER.png"
         alt="Latest Album Art"
       />
     </div>
