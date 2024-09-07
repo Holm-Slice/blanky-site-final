@@ -8,9 +8,7 @@ export default function Navbar() {
       <div id="navbar">
         <div id="header-img">
           <img
-            src={
-              "/public/assets/true-assets/Website-Files/Blanky-Pastel-Trans.PNG"
-            }
+            src={"/assets/true-assets/Website-Files/Blanky-Pastel-Trans.PNG"}
             alt="Blanky-logo"
             className="header-logo"
           />

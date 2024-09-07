@@ -5,8 +5,9 @@ import Footer from "./components/Footer";
 import "./App.css";
 import Music from "./components/Music";
 import Shows from "./components/Shows";
-import Press from "./components/Press";
-import Merch from "./components/Merch";
+// add later on at some point
+// import Press from "./components/Press";
+// import Merch from "./components/Merch";
 
 function App() {
   return (

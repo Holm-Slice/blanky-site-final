@@ -58,7 +58,10 @@
 // };
 
 import React, { useState, useEffect } from "react";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import {
+  MdKeyboardDoubleArrowLeft,
+  MdKeyboardDoubleArrowRight,
+} from "react-icons/md";
 import "./Carousel.css";
 
 export const Carousel = ({ data }) => {
@@ -91,7 +94,7 @@ export const Carousel = ({ data }) => {
 
   return (
     <div className="carousel">
-      <BsArrowLeftCircleFill
+      <MdKeyboardDoubleArrowLeft
         className="arrow arrow-left"
         onClick={previousSlide}
       />
@@ -109,7 +112,7 @@ export const Carousel = ({ data }) => {
           />
         );
       })}
-      <BsArrowRightCircleFill
+      <MdKeyboardDoubleArrowRight
         className="arrow arrow-right"
         onClick={nextSlide}
       />

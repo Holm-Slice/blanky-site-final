@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: "custom1";
-  src: url("public/assets/fonts/Boxing-Regular.otf");
+  src: url("assets/fonts/Boxing-Regular.otf");
 }
 
 @font-face {
-  font-family: custom2;
-  src: url("public/assets/fonts/Tanker-Regular.otf");
+  font-family: "custom2";
+  src: url("assets/fonts/Tanker-Regular.otf");
 }
 
 * {
