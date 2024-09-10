@@ -11,9 +11,7 @@ function Home() {
           <Carousel data={slides} />
         </div>
         <div className="bio">
-          <h1>Who is blanky?</h1>
           <br />
-          <h1>is this blocked</h1>
           <WriteUp />
           <br />
         </div>
