@@ -22,41 +22,6 @@ html {
   font-size: 16px; /* Adjust the base size */
 }
 
-/* Tablets */
-@media (min-width: 768px) {
-  #navbar {
-    font-size: 28px;
-  }
-  .header-logo {
-    margin-left: 25px;
-    width: 250px;
-  }
-  #container {
-    padding: 20px;
-  }
-}
-
-/* Desktops added up to html,body{} 9/21 */
-@media (min-width: 1024px) {
-  #navbar {
-    font-size: 35px;
-  }
-  .nav-list {
-    flex-direction: row;
-    /* justify-content: flex-end; */
-  }
-
-  .header-logo {
-    margin-left: 0;
-    width: 750px;
-  }
-
-  #music-page-main .spotify-player {
-    width: 900px;
-    margin-top: 100px;
-  }
-}
-
 html,
 body {
   margin: 0;
