@@ -25,6 +25,7 @@
 }
 
 .arrow {
+  display: none !important;
   position: absolute;
   width: 8rem;
   height: 8rem;
