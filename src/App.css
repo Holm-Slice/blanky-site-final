@@ -14,3 +14,11 @@
 }
 
 /* prevents error in react router dom when using netlify */
+
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
+  }
+
+  /* Add more styles as needed for mobile */
+}
