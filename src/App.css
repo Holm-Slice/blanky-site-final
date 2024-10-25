@@ -21,4 +21,8 @@
   }
 
   /* Add more styles as needed for mobile */
+  #header-img img {
+    width: 100%;
+    height: auto;
+  }
 }
