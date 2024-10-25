@@ -56,8 +56,12 @@ body {
     padding-bottom: 10px;
   }
 
+  .nav-item {
+    font-size: 0.9rem; /* 10% smaller font size */
+  }
+
   a.nav-link {
-    font-size: 10px;
+    font-size: 20px;
     margin-right: 15px;
   }
 
