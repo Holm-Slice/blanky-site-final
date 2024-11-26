@@ -291,7 +291,7 @@ a.nav-link {
 /* Mobile optimization */
 @media (max-width: 768px) {
   .bandcamp-iframe iframe {
-    width: 75%;
+    width: 60%;
     height: auto;
     aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   }
