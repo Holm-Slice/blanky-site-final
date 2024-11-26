@@ -293,7 +293,7 @@ a.nav-link {
   .bandcamp-iframe iframe {
     width: 60%;
     height: auto;
-    aspect-ratio: 0.5 / 1; /* Maintain aspect ratio */
+    aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   }
 
   #media-player {

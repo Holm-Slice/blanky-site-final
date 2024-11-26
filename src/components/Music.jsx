@@ -5,7 +5,7 @@ const BandcampPlayer = () => {
     <div id="media-player">
       <div
         dangerouslySetInnerHTML={{
-          __html: `<iframe style="border: 0; width: 500px; height: 700px;" src="https://bandcamp.com/EmbeddedPlayer/album=3013325932/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless><a href="https://blanky.bandcamp.com/album/blood-harmony">Blood Harmony by Blanky</a></iframe>`,
+          __html: `<iframe style="border: 0; width: 400px; height: 600px;" src="https://bandcamp.com/EmbeddedPlayer/album=3013325932/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless><a href="https://blanky.bandcamp.com/album/blood-harmony">Blood Harmony by Blanky</a></iframe>`,
         }}
       />
     </div>
