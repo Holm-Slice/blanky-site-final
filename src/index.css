@@ -283,15 +283,15 @@ a.nav-link {
 }
 
 .bandcamp-iframe iframe {
-  width: 100%;
-  max-width: 700px;
-  height: 900px;
+  width: 90%;
+  /* max-width: 700px; */
+  height: auto;
 }
 
 /* Mobile optimization */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .bandcamp-iframe iframe {
-    width: 100%;
+    width: 75%;
     height: auto;
     aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   }
