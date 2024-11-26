@@ -295,6 +295,14 @@ a.nav-link {
     height: auto;
     aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   }
+
+  #media-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 20px;
+  }
 }
 
 .bio {
