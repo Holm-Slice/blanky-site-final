@@ -365,3 +365,8 @@ a.nav-link {
   padding-bottom: 15px;
   padding-top: 25px;
 }
+
+h3 {
+  font-size: 60px;
+  line-height: 2;
+}
