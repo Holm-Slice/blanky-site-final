@@ -33,7 +33,7 @@ body {
 
 /* Ensure the container respects the size */
 #main-div,
-#main-section {
+#main-section .header {
   display: flex;
   /* added 9/21 */
   flex-grow: 1;
@@ -355,4 +355,13 @@ a.nav-link {
 
 .show-gallery {
   padding-top: 30px;
+}
+
+.font {
+  font-family: "custom2";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  padding-top: 25px;
 }

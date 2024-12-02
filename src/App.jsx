@@ -14,7 +14,7 @@ function App() {
     <>
       <div id="main-div">
         <Navbar />
-
+        {/* <h1>Our sound!</h1> */}
         <Routes>
           <Route path="/music" element={<Music />} />
           <Route path="/shows" element={<Shows />} />

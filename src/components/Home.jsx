@@ -6,6 +6,7 @@ import WriteUp from "./WriteUp.jsx";
 function Home() {
   return (
     <>
+      <h1 className="font">Shoegaze from Lawrence Kansas</h1>
       <div id="home-page">
         <div className="carousel-div">
           <Carousel data={slides} />
@@ -15,7 +16,9 @@ function Home() {
           <WriteUp />
           <br />
         </div>
-        <div className="latest-album-art">
+
+        <div>
+          <h2 className="font">New album releasing soon!</h2>
           <AlbumArt />
         </div>
       </div>

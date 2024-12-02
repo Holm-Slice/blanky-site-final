@@ -4,11 +4,14 @@ import ShowCards from "./Shows/ShowCards";
 
 function Shows() {
   return (
-    <div className="show-gallery">
-      {showData.map((show) => (
-        <ShowCards key={show.id} url={show.url} title={show.title} />
-      ))}
-    </div>
+    <>
+      <h1 className="font">Upcoming Live Shows</h1>
+      <div className="show-gallery">
+        {showData.map((show) => (
+          <ShowCards key={show.id} url={show.url} title={show.title} />
+        ))}
+      </div>
+    </>
   );
 }
 
