@@ -366,6 +366,13 @@ a.nav-link {
   padding-top: 25px;
 }
 
+/* Mobile optimization */
+@media (max-width: 600px) {
+  .font {
+    font-size: 1.2rem; /* Adjust this value as needed */
+  }
+}
+
 h3 {
   font-size: 50px;
   line-height: 2;
