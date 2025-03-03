@@ -15,7 +15,7 @@
 
 /* prevents error in react router dom when using netlify */
 
-@media (max-width: 600px) {
+@media (max-width: 600px) and (max-width: 799px) {
   .App {
     padding: 10px;
   }
@@ -29,7 +29,7 @@
   }
 
   .header-logo {
-    width: 50%; /* Adjust this value as needed */
+    width: 40%; /* Adjust this value as needed */
     margin-left: 25%;
     height: auto;
   }
@@ -38,7 +38,7 @@
 /* moved from index.css */
 
 /* Tablets */
-@media (min-width: 768px) {
+@media (min-width: 800px) and (max-width: 1023px) {
   #navbar {
     font-size: 28px;
   }
@@ -53,7 +53,7 @@
 }
 
 /* Desktops added up to html,body{} 9/21 */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
   #navbar {
     font-size: 35px;
   }
@@ -65,6 +65,7 @@
   .header-logo {
     margin-left: 0;
     width: 750px;
+    height: auto;
   }
 
   #music-page-main .spotify-player {

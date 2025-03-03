@@ -366,6 +366,27 @@ a.nav-link {
   padding-top: 25px;
 }
 
+.new-album-font {
+  font-family: "custom2";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  padding-top: 25px;
+  color: #black;
+  tracking: 0.25em;
+}
+
+.header-font {
+  font-family: "custom2";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  padding-top: 25px;
+  color: #f9ec36;
+}
+
 /* Mobile optimization */
 @media (max-width: 600px) {
   .font {
