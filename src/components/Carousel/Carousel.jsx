@@ -79,10 +79,10 @@ export const Carousel = ({ data }) => {
                   ? "opacity-100 scale-100"
                   : "opacity-0 scale-95 absolute top-0 left-0"
               }`}
-              style={{
-                boxShadow: "0px 0px 7px #EF7760",
-                aspectRatio: "16/9",
-              }}
+              // style={{
+              //   boxShadow: "0px 0px 7px #EF7760",
+              //   aspectRatio: "16/9",
+              // }}
               draggable="false"
             />
           );
