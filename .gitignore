@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# environment files
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+
