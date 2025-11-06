@@ -26,7 +26,9 @@ const albumData = [
       { name: "Lately I've Been", duration: "05:24" },
       { name: "Periwinkle Blue Eyes", duration: "02:37" },
       { name: "Haughty Little Flower", duration: "03:46" },
-      { name: "That One's for Me", duration: "02:xx" },
+      { name: "That One's for Me", duration: "02:35" },
+      { name: "Snifter of Poison", duration: "03:27" },
+      { name: "Pig in Clover", duration: "03:46" },
     ],
   },
   {
@@ -80,37 +82,44 @@ const BandcampPlayer = () => {
       {/* Navigation Header */}
       <div className="pt-4 sm:pt-6 md:pt-8 pb-4 text-center relative px-4">
         {/* Album Navigation */}
-        <div className="flex justify-center items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-          <button
-            onClick={prevAlbum}
-            className="p-1 sm:p-2 text-blanky-red hover:opacity-70 transition-all text-lg sm:text-xl"
-            aria-label="Previous album"
-          >
-            <FaChevronLeft size={16} className="sm:w-5 sm:h-5" />
-          </button>
-
-          <div className="text-center px-2">
-            <h2 className="font-custom2 text-xl sm:text-2xl md:text-3xl text-blanky-red mb-1">
+        <div className="mb-4 sm:mb-6">
+          {/* Album Title */}
+          <div className="text-center mb-4">
+            <h2 className="font-custom2 text-2xl sm:text-3xl md:text-8xl text-blanky-red mb-20 sm:mb-36 font-light mt-12">
               {album.title}
             </h2>
-            <p className="font-custom2 text-base sm:text-lg text-blanky-red">
-              by{" "}
-              <span className="text-blanky-red hover:underline cursor-pointer">
-                Blanky
-              </span>
-            </p>
-            <p className="text-xs sm:text-sm text-blanky-red mt-1">
-              Released {album.releaseDate}
-            </p>
           </div>
 
-          <button
-            onClick={nextAlbum}
-            className="p-1 sm:p-2 text-blanky-red hover:opacity-70 transition-all text-lg sm:text-xl"
-            aria-label="Next album"
-          >
-            <FaChevronRight size={16} className="sm:w-5 sm:h-5" />
-          </button>
+          {/* Artist/Release Info with Arrows */}
+          <div className="flex items-center justify-center">
+            <button
+              onClick={prevAlbum}
+              className="text-blanky-red hover:opacity-70 transition-all text-lg sm:text-xl mr-3 sm:mr-4"
+              aria-label="Previous album"
+            >
+              <FaChevronLeft size={16} className="sm:w-5 sm:h-5" />
+            </button>
+
+            <div className="text-center">
+              <p className="font-custom2 text-base sm:text-lg text-blanky-red">
+                by{" "}
+                <span className="text-blanky-red hover:underline cursor-pointer">
+                  Blanky
+                </span>
+              </p>
+              <p className="text-xs sm:text-sm text-blanky-red mt-1">
+                Released {album.releaseDate}
+              </p>
+            </div>
+
+            <button
+              onClick={nextAlbum}
+              className="text-blanky-red hover:opacity-70 transition-all text-lg sm:text-xl ml-3 sm:ml-4"
+              aria-label="Next album"
+            >
+              <FaChevronRight size={16} className="sm:w-5 sm:h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Album Indicator Dots */}
@@ -140,7 +149,7 @@ const BandcampPlayer = () => {
               style={{
                 border: 0,
                 width: "100%",
-                height: "300px",
+                height: "400px",
                 maxWidth: "700px",
               }}
               className="sm:h-[350px] md:h-[400px]"
@@ -175,11 +184,11 @@ const BandcampPlayer = () => {
             </div>
 
             {/* Track Listing */}
-            <div className="bg-blanky-grey  p-4 sm:p-5 md:p-6">
+            <div className="bg-blanky-grey p-4 sm:p-5 md:p-6 flex flex-col">
               <h3 className="font-custom2 text-xl sm:text-2xl text-blanky-red mb-3 sm:mb-4">
                 Track Listing
               </h3>
-              <div className="space-y-1 sm:space-y-2">
+              <div className="space-y-1 sm:space-y-2 overflow-y-auto max-h-40 sm:max-h-48 md:max-h-52 pr-2 scrollbar-thin scrollbar-thumb-blanky-red scrollbar-track-blanky-grey">
                 {album.tracks.map((track, index) => (
                   <div
                     key={index}
