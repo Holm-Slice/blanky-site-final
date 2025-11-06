@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://blankyband.com/sitemap.xml
+
+# Allow music bots and crawlers
+User-agent: Spotify
+Allow: /
+
+User-agent: AppleBot
+Allow: /
+
+User-agent: Bandcamp
+Allow: /
+
+User-agent: SoundCloud
+Allow: /
+
+# Disallow unnecessary files
+Disallow: /src/
+Disallow: *.js.map
+Disallow: /node_modules/
+Disallow: /dist/
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1

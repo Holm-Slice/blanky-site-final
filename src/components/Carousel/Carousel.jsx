@@ -1,91 +1,54 @@
-// import React from "react";
-// import { useState } from "react";
-// import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-// import "./Carousel.css";
-
-// export const Carousel = ({ data }) => {
-//   const [slide, setSlide] = useState(0);
-//   const nextSlide = () => {
-//     setSlide(slide === data.length - 1 ? 0 : slide + 1);
-//   };
-//   const previousSlide = () => {
-//     setSlide(slide === 0 ? data.length - 1 : slide - 1);
-//   };
-//   if (!data || !Array.isArray(data)) {
-//     console.error("Invalid data passed to Carousel component");
-//     return <div>Error: Invalid data</div>;
-//   }
-
-//   return (
-//     <div className="carousel">
-//       <BsArrowLeftCircleFill
-//         className="arrow arrow-left"
-//         onClick={previousSlide}
-//       />
-//       {data.map((item, index) => {
-//         if (!item.src || !item.alt) {
-//           console.error(`Invalid item at index ${index}:`, item);
-//           return <div key={index}>Error: Invalid item</div>;
-//         }
-//         return (
-//           <img
-//             src={item.src}
-//             alt={item.alt}
-//             key={index}
-//             className={slide === index ? "slide" : "slide slide-hidden"}
-//           />
-//         );
-//       })}
-//       <BsArrowRightCircleFill
-//         className="arrow arrow-right"
-//         onClick={nextSlide}
-//       />
-//       <span className="indicators">
-//         {data.map((_, index) => {
-//           return (
-//             <button
-//               key={index}
-//               onClick={() => setSlide(index)}
-//               className={
-//                 slide === index ? "indicator" : "indicator indicator-inactive"
-//               }
-//             ></button>
-//           );
-//         })}
-//       </span>
-//     </div>
-//   );
-// };
-
-import React, { useState, useEffect } from "react";
-import {
-  MdKeyboardDoubleArrowLeft,
-  MdKeyboardDoubleArrowRight,
-} from "react-icons/md";
-import "./Carousel.css";
+import { useState, useEffect, useCallback } from "react";
+import PropTypes from "prop-types";
 
 export const Carousel = ({ data }) => {
   const [slide, setSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
-  const nextSlide = () => {
+  // Minimum swipe distance
+  const minSwipeDistance = 50;
+
+  const nextSlide = useCallback(() => {
     setSlide((prevSlide) =>
       prevSlide === data.length - 1 ? 0 : prevSlide + 1
     );
-  };
+  }, [data.length]);
 
-  const previousSlide = () => {
+  const previousSlide = useCallback(() => {
     setSlide((prevSlide) =>
       prevSlide === 0 ? data.length - 1 : prevSlide - 1
     );
+  }, [data.length]);
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      previousSlide();
+    }
   };
 
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
-    }, 6000); // Change slide every 3 seconds
+    }, 6000); // Change slide every 4 seconds for more active feel
 
-    return () => clearInterval(timer); // Clear interval on component unmount
-  }, [slide]); // Re-run the effect when slide changes
+    return () => clearInterval(timer);
+  }, [nextSlide]);
 
   if (!data || !Array.isArray(data)) {
     console.error("Invalid data passed to Carousel component");
@@ -93,40 +56,47 @@ export const Carousel = ({ data }) => {
   }
 
   return (
-    <div className="carousel">
-      <MdKeyboardDoubleArrowLeft
-        className="arrow arrow-left"
-        onClick={previousSlide}
-      />
-      {data.map((item, index) => {
-        if (!item.src || !item.alt) {
-          console.error(`Invalid item at index ${index}:`, item);
-          return <div key={index}>Error: Invalid item</div>;
-        }
-        return (
-          <img
-            src={item.src}
-            alt={item.alt}
-            key={index}
-            className={slide === index ? "slide" : "slide slide-hidden"}
-          />
-        );
-      })}
-      <MdKeyboardDoubleArrowRight
-        className="arrow arrow-right"
-        onClick={nextSlide}
-      />
-      <span className="indicators">
-        {data.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setSlide(index)}
-            className={
-              slide === index ? "indicator" : "indicator indicator-inactive"
-            }
-          ></button>
-        ))}
-      </span>
+    <div
+      className="relative w-full sm:w-4/5 h-auto mx-auto mb-8 sm:mb-16 md:mb-20 pt-4 sm:pt-7 bg-blanky-yellow overflow-hidden cursor-pointer"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+      onClick={nextSlide}
+    >
+      <div className="relative w-full h-auto">
+        {data.map((item, index) => {
+          if (!item.src || !item.alt) {
+            console.error(`Invalid item at index ${index}:`, item);
+            return <div key={index}>Error: Invalid item</div>;
+          }
+          return (
+            <img
+              src={item.src}
+              alt={item.alt}
+              key={index}
+              className={`rounded-lg w-full h-auto transition-all duration-700 ease-in-out select-none object-cover ${
+                slide === index
+                  ? "opacity-100 scale-100"
+                  : "opacity-0 scale-95 absolute top-0 left-0"
+              }`}
+              style={{
+                boxShadow: "0px 0px 7px #EF7760",
+                aspectRatio: "16/9",
+              }}
+              draggable="false"
+            />
+          );
+        })}
+      </div>
     </div>
   );
+};
+
+Carousel.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
